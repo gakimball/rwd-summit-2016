@@ -1,0 +1,23 @@
+// Example 1
+
+$breakpoint-classes: (small, medium, large);
+
+@each $breakpoint in $breakpoint-classes {
+  @for $i from 1 through 12 {
+    @media screen and (min-width: 768px) {
+      .#{$breakpoint}-#{$i} { width: grid-column($i); }
+    }
+  }
+}
+
+// Example 1, fixed
+
+$breakpoint-classes: (small, medium, large);
+
+@each $breakpoint in $breakpoint-classes {
+  @media screen and (min-width: 768px) {
+    @for $i from 1 through 12 {
+      .#{$breakpoint}-#{$i} { width: grid-column($i); }
+    }
+  }
+}
